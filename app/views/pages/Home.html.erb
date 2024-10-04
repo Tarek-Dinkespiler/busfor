@@ -1,33 +1,37 @@
 <div class="container max-w-full bg-primary">
   <!-- NAVBAR -->
   <div class="container mx-auto min-w-[1100px] max-w-[1280px] h-20 py-6 pl-32 bg-primary flex flex-row text-white place-items-center text-end">
-      <div class="basis-6/12">
-        <%= link_to image_tag('busfor.ua-logo.svg'), root_path %>
-      </div>
-      <div class="basis-2/12 ">
-        ...
-      </div>
-      <div class="basis-2/12">
-        ...
-      </div>
-      <div class="basis-2/12">
-        <%= render "language-selector" %>
-      </div>
+    <div class="basis-6/12">
+      <%= link_to image_tag('busfor.ua-logo.svg'), root_path %>
+    </div>
+    <div class="basis-2/12 ">
+      ...
+    </div>
+    <div class="basis-2/12">
+      ...
+    </div>
+    <div class="basis-2/12">
+      <%= render "language-selector" %>
     </div>
   </div>
-
-  <div class="container bg-primary py-32">
+  <!-- TOP CONTAINER -->
+  <div class="container mx-auto min-w-[1100px] max-w-[1280px] bg-primary pt-24 pb-12 px-32">
     <div class="flex flex-row">
-      <div class="basis-4/5">
+      <div class="basis-9/12 mt-1 ml-12">
         <h1 class="font-bold text-4xl text-primary-title"><%= t('home.title') %></h1>
         <h2 class="text-xl text-primary-title">Тот же огромный выбор автобусных маршрутов.</p>
         <h2 class="text-xl text-primary-title">Теперь доступен на BlaBlaCar</p>
       </div>
-      <div class="basis-1/5 content-start">
-        <div class="max-w-full max-h-full">
-          <%= link_to image_tag('busfor.ua-blablacar.svg'), "https://www.blablacar.com.ua/bus", target: "_blank" %>
-        </div>
+      <div class="basis-3/12 self-start justify-self-end">
+        <%= link_to image_tag('busfor.ua-blablacar.svg'), "https://www.blablacar.com.ua/bus", target: "_blank" %>
       </div>
+    </div>
+  </div>
+  <!-- SEARCH CONTAINER -->
+  <div class="container mx-auto min-w-[1100px] max-w-[1280px] h-20 pt-6 pb-32 px-32 bg-primary flex flex-ro gap-x-3">
+    <div class="basis-9/12 bg-white py-6 w-full">
+    </div>
+    <div class="basis-3/12 bg-secondary py-6 w-full">
     </div>
   </div>
 </div>
