@@ -1,15 +1,16 @@
-<div data-controller="visibility">
-  <button id="language-selector" class="text-white border-solid border border-white rounded-3xl min-w-20 text-sm px-2 py-2 text-center" data-action="visibility#toggleTargets" type="button">
-    <div class="flex flex-row place-items-center">
-      <%= link_to language_tag(I18n.locale) %>
-      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+<div class="" data-controller="visibility">
+  <button id="language-selector" class="text-white border-solid border border-white rounded-3xl min-w-20 text-sm p-2 " data-action="visibility#toggleTargets" type="button">
+    <div class="flex flex-row justify-center align-middle">
+      <span>
+        <%= link_to language_tag(I18n.locale) %>
+      </span>
+      <svg class="w-2.5 h-2.5 m-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
       </svg>
     </div>
   </button>
-
-  <div id="language-selector-dropdown" class="z-50 min-w-48 bg-white rounded mt-2" data-visibility-target="hideable" hidden>
-    <ul class="py-2 text-sm text-gray-700">
+  <div id="language-selector-dropdown" class="relative" data-visibility-target="hideable" hidden>
+    <ul class="fixed top-16 py-2 text-sm text-gray-700 min-w-48 bg-white rounded">
       <li>
         <%= display_locale_dropdown_item "English", "en" %>
       </li>
