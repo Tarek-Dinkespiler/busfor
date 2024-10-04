@@ -1,3 +1,15 @@
 fr:
   home:
-    title: "Busfor rejoint BlaBlaCar"
+    announcement: "Busfor rejoint BlaBlaCar"
+    product-1-title: "Pas de files d'attente"
+    product-1-subtitle: "Billetterie en ligne à tout moment sur le site et l'application"
+    product-2-title: "50 000 destinations"
+    product-2-subtitle: "Évaluation des trajets sur la base des avis des passagers"
+    product-3-title: "Paiement sécurisé"
+    product-3-subtitle: "Normes de sécurité PCI DSS pour protéger les données de paiement"
+    product-4-title: "Billets échangeables"
+    product-4-subtitle: "Traitement rapide des échanges dans votre compte personnel"
+    subannouncement-1: "Le même vaste choix de lignes de bus"
+    subannouncement-2: "Désormais disponible sur BlaBlaCar"
+    subtitle: "pour l'Ukraine, la Pologne et l'Europe"
+    title: "Billets de bus"

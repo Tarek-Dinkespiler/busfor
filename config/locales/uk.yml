@@ -1,3 +1,15 @@
 uk:
   home:
-    title: "Busfor приєднується до BlaBlaCar"
+    announcement: "Busfor приєднується до BlaBlaCar"
+    product-1-title: "Без кас та черг"
+    product-1-subtitle: "Квитки онлайн у будь-який час на сайті та в додатку"
+    product-2-title: "50 000 напрямків"
+    product-2-subtitle: "Рейтинг рейсів перевізників за відгуками пасажирів"
+    product-3-title: "Безпечна оплата"
+    product-3-subtitle: "Стандарти безпеки PCI DSS для захисту платіжних даних"
+    product-4-title: "Безпечна оплата"
+    product-4-subtitle: "Швидке повернення в особистому кабінеті"
+    subannouncement-1: "Такий самий широкий вибір автобусних поїздок"
+    subannouncement-2: "Тепер доступний на BlaBlaCar"
+    subtitle: "Bпо Україні, Польщі та Європі"
+    title: "Квитки на автобус"

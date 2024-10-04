@@ -1,3 +1,15 @@
 ru:
   home:
-    title: "Busfor присоединяется к BlaBlaCar"
+    announcement: "Busfor присоединяется к BlaBlaCar"
+    product-1-title: "Без касс и очередей"
+    product-1-subtitle: "Билеты онлайн в любое время на сайте и в приложении"
+    product-2-title: "50 000 направлений"
+    product-2-subtitle: "Рейтинг рейсов перевозчиков по отзывам пассажиров"
+    product-3-title: "Безопасная оплата"
+    product-3-subtitle: "Стандарты безопасности PCI DSS для защиты платежных данных"
+    product-4-title: "Возврат билетов"
+    product-4-subtitle: "Быстрое оформление возврата в личном кабинете"
+    subannouncement-1: "Тот же огромный выбор автобусных маршрутов"
+    subannouncement-2: "Теперь доступен на BlaBlaCar"
+    subtitle: "по Украине, Польше и Европе"
+    title: "Билеты на автобус"

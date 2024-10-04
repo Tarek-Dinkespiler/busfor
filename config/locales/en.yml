@@ -29,4 +29,16 @@
 
 en:
   home:
-    title: "Busfor joins BlaBlaCar"
+    announcement: "Busfor joins BlaBlaCar"
+    product-1-title: "No egisters, nor queues"
+    product-1-subtitle: "Tickets online at any time on the website and app"
+    product-2-title: "50 000 destinations"
+    product-2-subtitle: "Rating of trips based on passenger reviews"
+    product-3-title: "Secure payment"
+    product-3-subtitle: "PCI DSS security standards to protect payment data"
+    product-4-title: "Exchangeable tickets"
+    product-4-subtitle: "Exchangeable tickets"
+    subannouncement-1: "Quick exchange processing in your personal account"
+    subannouncement-2: "Now available on BlaBlaCar"
+    subtitle: "in Ukraine, Poland and Europe"
+    title: "Bus tickets"
