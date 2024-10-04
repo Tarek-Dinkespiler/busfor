@@ -1,5 +1,7 @@
 fr:
   home:
+    account: "Compte personnel"
+    assistance: "Service d'assistance"
     announcement: "Busfor rejoint BlaBlaCar"
     product-1-title: "Pas de files d'attente"
     product-1-subtitle: "Billetterie en ligne à tout moment sur le site et l'application"

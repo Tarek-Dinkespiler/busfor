@@ -29,6 +29,8 @@
 
 en:
   home:
+    account: "Personal account"
+    assistance: "Assistance service"
     announcement: "Busfor joins BlaBlaCar"
     product-1-title: "No egisters, nor queues"
     product-1-subtitle: "Tickets online at any time on the website and app"
