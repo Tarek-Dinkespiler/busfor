@@ -1,13 +1,13 @@
 module PagesHelper
     def display_check_in_dropdown_item (locale)
-        if (I18n.locale == locale.to_sym)
-            return content_tag(:div, class: "inline-block align-baseline") do
-                content_tag(:svg, width: "16", height: "16", viewBox: "0 0 16 16", fill: "#F9253F") do
+        if I18n.locale == locale.to_sym
+            content_tag(:div, class: "inline-block align-baseline") do
+                content_tag(:svg, "aria-hidden": "true", xmlns: "http://www.w3.org/2000/svg", width: "16", height: "16", viewBox: "0 0 16 16", fill: "#F9253F") do
                     tag(:path, "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M6.611 10.502L3.723 7.521a1.009 1.009 0 0 0-1.414-.03.98.98 0 0 0-.032 1.396l3.69 3.808c.423.436 1.138.4 1.513-.077l6.31-8.025a.98.98 0 0 0-.177-1.385 1.008 1.008 0 0 0-1.403.174l-5.599 7.12z")
                 end
             end
-        else 
-            return ""
+        else
+            ""
         end
     end
 
