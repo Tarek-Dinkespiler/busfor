@@ -1,4 +1,5 @@
 FROM ruby:3.3.5-slim-bookworm AS assets
+LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
 
@@ -6,7 +7,7 @@ ARG UID=1000
 ARG GID=1000
 
 RUN bash -c "set -o pipefail && apt-get update \
-  && apt-get install -y --no-install-recommends build-essential curl git libpq-dev default-libmysqlclient-dev \
+  && apt-get install -y --no-install-recommends build-essential curl git libpq-dev \
   && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key -o /etc/apt/keyrings/nodesource.asc \
   && echo 'deb [signed-by=/etc/apt/keyrings/nodesource.asc] https://deb.nodesource.com/node_20.x nodistro main' | tee /etc/apt/sources.list.d/nodesource.list \
   && apt-get update && apt-get install -y --no-install-recommends nodejs \
@@ -39,15 +40,15 @@ CMD ["bash"]
 ###############################################################################
 
 FROM ruby:3.3.5-slim-bookworm AS app
+LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 
 WORKDIR /app
 
 ARG UID=1000
 ARG GID=1000
 
-
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends build-essential curl libpq-dev default-libmysqlclient-dev \
+  && apt-get install -y --no-install-recommends build-essential curl libpq-dev \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
   && groupadd -g "${GID}" ruby \
@@ -70,6 +71,6 @@ COPY --chown=ruby:ruby . .
 
 ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
 
-EXPOSE 3000
+EXPOSE 8000
 
-CMD ["rails", "server", "-b", "0.0.0.0", "--pid=/tmp/server.pid"]
+CMD ["rails", "s"]
