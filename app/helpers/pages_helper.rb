@@ -21,7 +21,7 @@ module PagesHelper
     end
 
     def language_tag(locale)
-        case (locale)
+        case (locale.try("to_sym") || :en)
         when :en
             "Eng"
         when :fr
