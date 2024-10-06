@@ -8,7 +8,7 @@ x-app: &default-app
       - "RAILS_ENV=${RAILS_ENV:-production}"
       - "NODE_ENV=${NODE_ENV:-production}"
   depends_on:
-    postgres:
+    mariadb:
       condition: "service_started"
       required: false
   env_file:
@@ -38,22 +38,20 @@ x-assets: &default-assets
     - ".:/app"
 
 services:
-  postgres:
+  mariadb:
     deploy:
-      resources:
-        limits:
-          cpus: "${DOCKER_POSTGRES_CPUS:-0}"
-          memory: "${DOCKER_POSTGRES_MEMORY:-0}"
+    image: mariadb:latest
+    container_name: mariadb
     environment:
-      POSTGRES_USER: "${POSTGRES_USER}"
-      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
-      # POSTGRES_DB: "${POSTGRES_DB}"
-    image: "postgres:16.4-bookworm"
-    profiles: ["postgres"]
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: busfor_development
+    ports:
+      - "3306:3306"
+    profiles: ["mariadb"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
     volumes:
-      - "postgres:/var/lib/postgresql/data"
+      - "mariadb:/var/lib/mysql"
 
   web:
     <<: *default-app
@@ -63,13 +61,13 @@ services:
           cpus: "${DOCKER_WEB_CPUS:-0}"
           memory: "${DOCKER_WEB_MEMORY:-0}"
     healthcheck:
-      test: "${DOCKER_WEB_HEALTHCHECK_TEST:-curl localhost:3000/up}"
+      test: "${DOCKER_WEB_HEALTHCHECK_TEST:-curl localhost:8000/up}"
       interval: "60s"
       timeout: "3s"
       start_period: "5s"
       retries: 3
     ports:
-      - "3000:3000"
+      - "${DOCKER_WEB_PORT_FORWARD:-127.0.0.1:8000}:${PORT:-8000}"
     profiles: ["web"]
 
   js:
@@ -81,4 +79,4 @@ services:
     command: "yarn build:css"
 
 volumes:
-  postgres: {}
+  mariadb: {}
