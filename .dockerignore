@@ -11,9 +11,11 @@
 /.env*
 !/.env*.erb
 
-# Ignore all default key files.
-/config/master.key
-/config/credentials/*.key
+# IGNORING DUE TO THE HARMLESS NATURE OF THE PROJECT
+#
+# # Ignore all default key files.
+# /config/master.key
+# /config/credentials/*.key
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -31,11 +33,11 @@
 /tmp/storage/*
 !/tmp/storage/.keep
 
-# Ignore assets.
-/node_modules/
-/app/assets/builds/*
-!/app/assets/builds/.keep
-/public/assets
+# # Ignore assets.
+# /node_modules/
+# /app/assets/builds/*
+# !/app/assets/builds/.keep
+# /public/assets
 
 # Ignore CI service files.
 /.github

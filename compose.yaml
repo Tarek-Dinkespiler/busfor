@@ -22,8 +22,6 @@ services:
       DB_NAME: busfor_development
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app:cached
 volumes:
   mariadb: {}
 networks:
