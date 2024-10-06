@@ -37,6 +37,9 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  # Temporary management of DB_HOST variable
+  gem "dotenv-rails", "~> 3.1", ">= 3.1.4"
+
   gem "htmlbeautifier", "~> 1.4", ">= 1.4.3"
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

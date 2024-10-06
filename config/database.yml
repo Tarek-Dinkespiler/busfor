@@ -12,10 +12,12 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= Rails.application.credentials.database.dig(:database, :pool) %>
   username: root
   password: root
-  host: <%= ENV.fetch("DB_HOST") { "mariadb" } %>
+  # username: <%= Rails.application.credentials.database.dig(:database, :username) %>
+  # password: <%= Rails.application.credentials.database.dig(:database, :password) %>
+  host: <%= ENV.fetch("DB_HOST") { "db" } %>
 
 development:
   <<: *default
@@ -51,5 +53,3 @@ test:
 production:
   <<: *default
   database: busfor_production
-  username: busfor
-  password: <%= ENV["BUSFOR_DATABASE_PASSWORD"] %>
