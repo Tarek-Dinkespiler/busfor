@@ -27,7 +27,5 @@ module Busfor
     config.i18n.available_locales = [ :fr, :en, :uk, :ru ]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
-
-    config.web_console.permissions = "192.168.65.1"
   end
 end
