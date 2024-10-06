@@ -4,4 +4,5 @@ RUN mkdir /app
 WORKDIR /app
 COPY . .
 RUN bundle install
+EXPOSE 8000
 CMD ["rails", "server"]
