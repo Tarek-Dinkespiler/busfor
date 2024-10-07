@@ -6,7 +6,7 @@ I was told that this mission for BlaBlaCar required a lot of autonomy. Therefore
 
 I apologize in advance if I'm way off target with my many assumptions. In the meantime, I assure the reader that I did my best considering the very limited information in my possession.
 
-This project is hosted on AWS and can be viewed [here](http://13.39.18.73).
+This project is hosted on AWS and can be viewed [here](http://35.181.43.208).
 
 In order to spin locally, please refer to
 [this section](#setting-up-locally)
