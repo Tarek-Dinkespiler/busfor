@@ -38,7 +38,7 @@ In this repository, I tried to examplify some of my skills in solving the proble
 
 ### What it's supposed to be
 
-This project consist in building an app that looks a little like busfor.ua, that has one or two very basic functionalities I expect from busfor.ua and of course deploying the app to serve it on a public url.
+This project consists in building an app that looks a little like busfor.ua, that has one or two very basic functionalities I would expect to find in the original product and of course deploying the app to serve it on a public url.
 
 ### What it's definitely not
 
@@ -46,11 +46,11 @@ This is in no way a clone of busfor.ua. I felt it was important that this app wa
 
 It is by no means a way to showcase my development skills in ruby on rails. I haven't touched this framework in a few years and even though I was relieved to find out that a lot of my knowledge was still there (and paradoxically had even increased), I'm obviously going to need a bit of time to bring my proficiency up to speed.
 
-Finally, I don't claim to have made the best choices but I do think that many of the critical aspect of software engineering are exposed in this endeavour. By chance, some of them could catch the reader's attention as they could be relevant to the mission.
+Finally, I don't claim to have made the best choices but I do think that many of the critical aspects of software engineering are exposed in this endeavour. By chance, some of them could end up catching the reader's attention depending on their relevancy to the mission.
 
 ## Setting up the project
 
-The project will be relying on the current stable versions of ruby and rails that seem to be :
+The project will be relying on the current stable versions of ruby and rails :
 
 - ruby 3.3.5
 - rails 7.2.1
@@ -83,11 +83,13 @@ Let's consider a product requirement where strings containing foreign characters
 
 In this particular case, I'd probably consider using a library like [slugify](https://www.npmjs.com/package/slugify). It has a strong consistant 3 million users and no dependencies of its own. However, it doesn't seem to be updated very frequently and I don't really know the authors.
 
-On the other hand, if all we need is to prevent non-english characters in our system, maybe a solution could be to validate the data instead of transforming the data. In which case, a simple, well-tested function could do the trick. I would definitely still consider using a library such as slugify to update legacy data that needs to be transformed from the previous standard. But I'd try to restrict its usage to a simple migration script and quickly remove it from the project's dependencies.
+On the other hand, if all we need is to prevent non-english characters in our system, maybe a solution could be to validate the data instead of transforming the data. In which case, a simple, well-tested function could do the trick.
+
+**Of course, the product always comes first.** Therefore, if talks with the product team end up favoring the initial solution to transform the data, I'd dig deeper to assess the liability of the new dependency versus the cost of developing a custom solution. In this case, I would very likely use slugify.
 
 ### Data and databases - MariaDB
 
-My experience in relational databases is solely with postgresql. However, I made the choice to go with MariaDB for this project because I think that it's what's being used at BlaBlaCar.
+My experience in relational databases is solely with postgresql. However, I made the choice to go with MariaDB for this project because I think that it's what's being used at BlaBlaCar. This choice ended up considerably complexifying my work.
 
 Since busfor.ua is a live project (or at least has been), I anticipate that there must be production data.
 
@@ -204,10 +206,4 @@ In order to start the project, use the docker command to build and start and vis
 ```sh
     docker exec -u root -it rails-app /bin/bash
     docker exec -u root -it mariadb /bin/bash
-```
-
-### Deploy on EC2
-
-```sh
-    scp -i seemlesscode.pem -r . ec2-user@<EC2-IPV4>:/home/ec2-user/seemlesscode
 ```
