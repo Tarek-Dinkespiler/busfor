@@ -1,23 +1,23 @@
 <%= form_tag travel_options_path, method: 'GET', class: "container bg-primary mx-auto min-w-[1280px] max-w-[1100px] h-20 pt-6 pb-32 px-32 flex flex-row flex-wrap" do %>
   <div class="basis-9/12">
     <div class="bg-white flex flex-row rounded-lg mr-2">
-      <div class="flex flex-col border-r border-solid border-text-disabled-text py-2">
+      <div class="flex flex-col basis-1/3 border-r border-solid border-text-disabled-text py-2">
         <%= label_tag :from_city, 'From', class: "pl-2 text-disabled-text text-sm" %>
-        <%= text_field_tag :from_city, {}, class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0" %>
+        <%= select_tag :from_city, options_from_collection_for_select(@destinations, "city", "city", @from_city), prompt: "Select a city", class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0 cursor-pointer" %>
       </div>
-      <div class="flex flex-col border-r border-solid border-text-disabled-text py-2">
+      <div class="flex flex-col basis-1/3 border-r border-solid border-text-disabled-text py-2">
         <%= label_tag :to_city, 'To', class: "pl-2 text-disabled-text text-sm" %>
-        <%= text_field_tag :to_city, {}, class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0" %>
+        <%= select_tag :to_city, options_from_collection_for_select(@destinations, "city", "city", @to_city), prompt: "Select a city", class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0 cursor-pointer" %>
       </div>
-      <div class="flex flex-col py-2">
+      <div class="flex flex-col basis-1/3 py-2">
         <%= label_tag :selected_date, 'Date de départ', class: "pl-2 text-disabled-text text-sm" %>
-        <%= date_field_tag :selected_date, {}, class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0" %>
+        <%= date_field_tag :selected_date, {}, value: @selected_date, class: "mr-2 pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0 cursor-pointer" %>
       </div>
     </div>
   </div>
   <div class="basis-3/12 text-white">
     <div class="flex flex-col bg-secondary rounded-lg py-4 ml-1">
-      <%= submit_tag 'Rechercher', class: "" %>
+      <%= submit_tag 'Rechercher', class: "cursor-pointer" %>
     </div>
   </div>
 <% end %>
