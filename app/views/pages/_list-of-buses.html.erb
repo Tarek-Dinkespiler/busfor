@@ -1,9 +1,9 @@
 <div class="container mx-auto min-w-[1280px] max-w-[1100px] px-32 pb-40">
   <div class="flex flex-row pt-24">
-    <h1 class="font-bold text-4xl text-primary-title">Trajets correspondants</h1>
+    <h2 class="text-xl text-primary-title">Travel options for</h2>
   </div>
   <div class="flex flex-row">
-    <h2 id="from-to" class="text-xl text-primary-title"><%= "#{@from_city} - #{@to_city}" %></h2>
+    <h1 id="from-to" class="font-bold text-4xl text-primary-title"><%= "#{@from_city} - #{@to_city}" %></h1>
   </div>
   <% if @travel_options.empty? %>
     <div class="flex flex-row pt-12">
@@ -13,7 +13,11 @@
     <% @travel_options.each do|option| %>
       <div class="flex flex-row pt-12">
         <div id=<%="travel-option-#{option.id}"%>>
-          <p><%= "Option numéro #{option.id}" %></p>
+          <div class="block py-12 px-6 bg-white rounded-lg shadow cursor-pointer">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight hover:text-secondary"><%= "Bus tickets for #{@from_city} - #{@to_city}" %></h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400"><%= "Departure: #{ travel_day(option.departure_time) } at #{ travel_time(option.departure_time) }" %></p>
+            <p class="font-normal text-gray-700 dark:text-gray-400"><%= "Arrival: #{ travel_day(option.arrival_time) } at #{ travel_time(option.arrival_time) }" %></p>
+          </div>
         </div>
       </div>
     <% end %>

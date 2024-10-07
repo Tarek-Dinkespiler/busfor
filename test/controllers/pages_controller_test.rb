@@ -20,7 +20,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       selected_date: "2024-10-8T00:00:00.000Z"
     )
     assert_response :success
-    assert_select "h2#from-to", count: 1, text: "Paris - London"
+    assert_select "h1#from-to", count: 1, text: "Paris - London"
     assert_select "h2#no-schedule", count: 0
     option_id = @controller.instance_variable_get(:@travel_options).first.id
     assert_select "div#travel-option-#{option_id}", count: 1
@@ -34,7 +34,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       selected_date: "2024-10-8T00:00:00.000Z"
     )
     assert_response :success
-    assert_select "h2#from-to", count: 1, text: "Moscow - Kiev"
+    assert_select "h1#from-to", count: 1, text: "Moscow - Kiev"
     assert_select "h2#no-schedule", count: 1, text: "Unfortunately, no travel options match your request. Please try other dates."
   end
 end

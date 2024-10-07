@@ -34,4 +34,12 @@ module PagesHelper
             "Eng"
         end
     end
+
+    def travel_day(date)
+        date.strftime("%A #{date.day.ordinalize}, %B")
+    end
+
+    def travel_time(date)
+        date.strftime("%H:%M")
+    end
 end
