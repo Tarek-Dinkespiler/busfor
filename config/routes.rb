@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   get "pages/update_locale"
-  get "pages/travel_options", to: "pages#travel_options", as: "travel_options"
+  get "schedule", to: "pages#travel_options", as: "travel_options"
 end

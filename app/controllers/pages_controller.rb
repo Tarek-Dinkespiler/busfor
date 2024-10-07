@@ -9,5 +9,10 @@ class PagesController < ApplicationController
   end
 
   def travel_options
+    @from_city = params[:from_city]
+    @to_city = params[:to_city]
+    selected_date = params[:selected_date]
+
+    @travel_options = BusTimeTable.find_travel_options(@from_city, @to_city, selected_date)
   end
 end

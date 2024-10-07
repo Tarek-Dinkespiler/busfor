@@ -1,0 +1,21 @@
+<div class="container mx-auto min-w-[1280px] max-w-[1100px] px-32 pb-40">
+  <div class="flex flex-row pt-24">
+    <h1 class="font-bold text-4xl text-primary-title">Trajets correspondants</h1>
+  </div>
+  <div class="flex flex-row">
+    <h2 id="from-to" class="text-xl text-primary-title"><%= "#{@from_city} - #{@to_city}" %></h2>
+  </div>
+  <% if @travel_options.empty? %>
+    <div class="flex flex-row pt-12">
+      <h2 id="no-schedule" class="text-xl text-primary-title">Unfortunately, no travel options match your request. Please try other dates. </h2>
+    </div>
+  <% else %>
+    <% @travel_options.each do|option| %>
+      <div class="flex flex-row pt-12">
+        <div id=<%="travel-option-#{option.id}"%>>
+          <p><%= "Option numéro #{option.id}" %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
