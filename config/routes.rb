@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "pages#Home"
+  root "pages#home"
   get "pages/update_locale"
+  get "pages/travel_options", to: "pages#travel_options", as: "travel_options"
 end
