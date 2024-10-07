@@ -1,6 +1,23 @@
-<div class="container bg-primary text-white mx-auto min-w-[1280px] max-w-[1100px] h-20 pt-6 pb-32 px-32 flex flex-row gap-x-3">
-  <div class="basis-9/12 bg-white py-6 w-full">
+<%= form_tag travel_options_path, method: 'GET', class: "container bg-primary mx-auto min-w-[1280px] max-w-[1100px] h-20 pt-6 pb-32 px-32 flex flex-row flex-wrap" do %>
+  <div class="basis-9/12">
+    <div class="bg-white flex flex-row rounded-lg mr-2">
+      <div class="flex flex-col border-r border-solid border-text-disabled-text py-2">
+        <%= label_tag :from_city, 'From', class: "pl-2 text-disabled-text text-sm" %>
+        <%= text_field_tag :from_city, {}, class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0" %>
+      </div>
+      <div class="flex flex-col border-r border-solid border-text-disabled-text py-2">
+        <%= label_tag :to_city, 'To', class: "pl-2 text-disabled-text text-sm" %>
+        <%= text_field_tag :to_city, {}, class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0" %>
+      </div>
+      <div class="flex flex-col py-2">
+        <%= label_tag :selected_date, 'Date de départ', class: "pl-2 text-disabled-text text-sm" %>
+        <%= date_field_tag :selected_date, {}, class: "pl-2 py-0 pr-0 border-none focus:border-transparent focus:ring-0" %>
+      </div>
+    </div>
   </div>
-  <div class="basis-3/12 bg-secondary py-6 w-full">
+  <div class="basis-3/12 text-white">
+    <div class="flex flex-col bg-secondary rounded-lg py-4 ml-1">
+      <%= submit_tag 'Rechercher', class: "" %>
+    </div>
   </div>
-</div>
+<% end %>
