@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_10_06_184352) do
-  create_table "bus_routes", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
+  create_table "bus_routes", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "from_id", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_06_184352) do
     t.index ["to_id"], name: "index_bus_routes_on_to_id"
   end
 
-  create_table "bus_time_tables", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
+  create_table "bus_time_tables", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "departure_time", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_06_184352) do
     t.index ["departure_time", "arrival_time", "bus_route_id"], name: "idx_on_departure_time_arrival_time_bus_route_id_db0c6648d6", unique: true
   end
 
-  create_table "destinations", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
+  create_table "destinations", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city", null: false
