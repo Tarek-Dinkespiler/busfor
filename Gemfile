@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # Temporary management of DB_HOST variable
-  gem "dotenv-rails", "~> 3.1", ">= 3.1.4"
+  gem "dotenv-rails", "~> 3.1"
 
   gem "htmlbeautifier", "~> 1.4", ">= 1.4.3"
 
